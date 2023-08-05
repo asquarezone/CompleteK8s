@@ -7,17 +7,7 @@ spec:
   containers:
     - name: jenkins
       image: jenkins/jenkins:lts-jdk11
-      resources:
-        requests:
-          memory: 100Mi
-        limits:
-          memory: 256Mi
   initContainers:
     - name: jenkinsi
       image: jenkins/jenkins:lts-jdk11
-      resources:
-        requests:
-          memory: 100Mi
-        limits:
-          memory: 256Mi
 
