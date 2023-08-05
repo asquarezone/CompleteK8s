@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: actvity1
+spec:
+  containers:
+    - name: jenkins
+      image: jenkins/jenkins:lts-jdk11
+      resources:
+        requests:
+          memory: 100Mi
+        limits:
+          memory: 256Mi
+
