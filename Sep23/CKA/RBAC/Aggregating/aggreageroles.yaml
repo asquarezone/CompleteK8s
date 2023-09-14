@@ -1,0 +1,12 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: aggr-sample
+aggregationRule:
+  clusterRoleSelectors:
+    - matchLabels:
+        rbac-list-pods: "true"
+    - matchLabels:
+        rbac-delete-services: "true"
+rules: []
