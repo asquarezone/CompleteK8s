@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: activity-quota
+spec:
+  hard:
+    services: "2"
+    pods: "10"
+    services.nodeports: "2"
