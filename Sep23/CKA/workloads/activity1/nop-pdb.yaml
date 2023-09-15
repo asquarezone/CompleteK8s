@@ -1,0 +1,11 @@
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: nop-pdb
+  namespace: activity1
+spec:
+  minAvailable: 80%
+  selector:
+    matchLabels:
+      app: nop
