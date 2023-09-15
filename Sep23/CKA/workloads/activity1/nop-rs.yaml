@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nop-rs
+  labels:
+    app: nop-rs
+    resource: rs
+  namespace: activity1
+spec:
+  minReadySeconds: 10
+  replicas: 3
+  selector:
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - nop
+      - key: env
+        operator: NotIn
+        values:
+          - prod
+          - uat
+  template:
+    metadata:
+      labels:
+        app: nop
+        env: dev
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: nop
+          image: shaikkhajaibrahim/nopcommerceaug23:latest
+          ports:
+            - name: nopport
+              containerPort: 80
+              protocol: TCP
+    
+  
