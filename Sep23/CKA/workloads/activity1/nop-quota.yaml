@@ -3,6 +3,7 @@ apiVersion: v1
 kind: ResourceQuota
 metadata:
   name: activity-quota
+  namespace: activity1
 spec:
   hard:
     services: "2"
