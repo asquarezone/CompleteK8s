@@ -5,15 +5,15 @@ metadata:
   name: nonmatchinghard
 spec:
   affinity:
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: diskspeed
-              operator: In
-              values:
-                - low
-                - magnetic
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: diskspeed
+                operator: In
+                values:
+                  - low
+                  - magnetic
   containers:
     - name: mycontainer
       image: nginx

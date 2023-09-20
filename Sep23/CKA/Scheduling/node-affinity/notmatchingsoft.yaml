@@ -5,15 +5,15 @@ metadata:
   name: nonmatchingsoft
 spec:
   affinity:
-  nodeAffinity:
-    preferredDuringSchedulingIgnoredDuringExecution:
-      - preference:
-          matchExpressions:
-            - key: diskspeed
-              operator: In
-              values:
-                - low
-                - magnetic
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - preference:
+            matchExpressions:
+              - key: diskspeed
+                operator: In
+                values:
+                  - low
+                  - magnetic
   containers:
     - name: mycontainer
       image: nginx

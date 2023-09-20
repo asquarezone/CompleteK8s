@@ -5,15 +5,15 @@ metadata:
   name: matchingna
 spec:
   affinity:
-  nodeAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: diskspeed
-              operator: In
-              values:
-                - high
-                - medium
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: diskspeed
+                operator: In
+                values:
+                  - high
+                  - medium
   containers:
     - name: mycontainer
       image: nginx
