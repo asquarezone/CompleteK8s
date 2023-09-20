@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nonmatchingsoft
+spec:
+  affinity:
+  nodeAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - preference:
+          matchExpressions:
+            - key: diskspeed
+              operator: In
+              values:
+                - low
+                - magnetic
+  containers:
+    - name: mycontainer
+      image: nginx
