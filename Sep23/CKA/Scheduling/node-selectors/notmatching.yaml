@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: matching
+spec:
+  nodeSelector:
+    diskspeed: medium
+  containers:
+    - name: mycontainer
+      image: nginx
