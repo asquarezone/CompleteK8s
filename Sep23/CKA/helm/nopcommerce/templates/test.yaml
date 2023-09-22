@@ -1,0 +1,4 @@
+Release: {{ .Release }}
+Chart: {{ .Chart.Name }}
+learning:
+  replicaCount: {{ .Values.replicaCount }}

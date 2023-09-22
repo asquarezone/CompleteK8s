@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: shaikkhajaibrahim/nopcommerceaug23
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "devops"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -39,6 +39,9 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
+  targetPort: 80
+  protocol: TCP
+  
 
 ingress:
   enabled: false
@@ -80,3 +83,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+labels:
+  app: nop
+  version: v1

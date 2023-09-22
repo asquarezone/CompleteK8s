@@ -6,10 +6,10 @@ metadata:
   labels:
     app: nop
 spec:
-  type: NodePort
+  type: {{ .Values.service.type | default "LoadBalancer" }}
   selector:
     app: nop
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
+    - protocol: {{ .Values.service.protocol | default "TCP" }}
+      port: {{ .Values.service.port | default 80 }}
+      targetPort: {{ .Values.service.targetPort | default 80 }}

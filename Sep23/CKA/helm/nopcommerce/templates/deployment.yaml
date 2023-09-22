@@ -7,7 +7,7 @@ metadata:
     app: nop
 spec:
   minReadySeconds: 5
-  replicas: 2
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: nop
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: nop-deploy-task
-          image: shaikkhajaibrahim/nopcommerceaug23:devops
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: 80
               protocol: TCP
