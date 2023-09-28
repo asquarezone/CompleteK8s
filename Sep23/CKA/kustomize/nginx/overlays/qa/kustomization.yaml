@@ -1,0 +1,8 @@
+resources:
+  - ../../base
+
+namespace: nginx-qa
+
+patches:
+  - path: 'deployment.yaml'
+  - path: 'service.yaml'

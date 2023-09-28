@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  application.properties: "debug=info\r\nverbose=false\r\nmysql_host=localhost"
+kind: ConfigMap
+metadata:
+  name: debug-226k5thb5t
+  namespace: dev

@@ -5,3 +5,8 @@ namespace: prod
 
 patches:
   - path: deployment.yaml
+
+secretGenerator:
+  - name: db-secret
+    files:
+      - passwords.txt

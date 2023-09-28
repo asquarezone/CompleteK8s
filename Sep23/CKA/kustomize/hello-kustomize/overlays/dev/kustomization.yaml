@@ -8,3 +8,9 @@ images:
 
 patches:
   - path: deployment.yaml
+
+configMapGenerator:
+  - name: debug
+    files:
+      - application.properties
+      - debug
