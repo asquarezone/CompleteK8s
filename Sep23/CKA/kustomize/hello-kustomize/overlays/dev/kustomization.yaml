@@ -1,0 +1,10 @@
+resources:
+  - ../../base
+
+namespace: dev
+images:
+  - name: nginx
+    newTag: latest
+
+patches:
+  - path: deployment.yaml
