@@ -1,12 +1,12 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+  name: nop-service
 spec:
   selector:
-    app: nginx
+    app: nop
   ports:
-    - name: nginxport
-      protocol: TCP
+    - protocol: TCP
       port: 80
       targetPort: 80

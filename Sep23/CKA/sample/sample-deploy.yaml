@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nop-deployment
+  labels:
+    app: nop
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nop
+  template:
+    metadata:
+      labels:
+        app: nop
+    spec:
+      containers:
+      - name: nop
+        image: qt.com.private/nop:v210923
+        ports:
+        - containerPort: 80

@@ -19,9 +19,13 @@ spec:
       labels:
         app: nop
     spec:
+      automountServiceAccountToken: {{ .Values.optionals.automount | default true }}
       containers:
         - name: nop-deploy-task
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: 80
               protocol: TCP
+          
+          
+          

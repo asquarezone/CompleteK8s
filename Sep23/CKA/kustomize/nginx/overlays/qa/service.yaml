@@ -3,4 +3,9 @@ kind: Service
 metadata:
   name: nginx-service
 spec:
-  type: LoadBalancer
+  type: NodePort
+  ports:
+    - name: nginxport
+      protocol: TCP
+      port: 80
+      nodePort: 30007
