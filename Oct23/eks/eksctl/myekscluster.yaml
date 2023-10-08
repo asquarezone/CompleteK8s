@@ -1,0 +1,32 @@
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: myekscluster
+  region: us-west-2
+  version: "1.27"
+  tags:
+    purpose: learning
+
+nodeGroups:
+  - name: nodegroup1
+    amiFamily: "AmazonLinux2"
+    instanceType: t3.large
+    desiredCapacity: 1
+    minSize: 1
+    maxSize: 1
+
+managedNodeGroups:
+  - name: m-ng-1
+    minSize: 1
+    maxSize: 2
+    desiredCapacity: 1
+    instanceType: t3.large
+
+fargateProfiles:
+  - name: fp-dev
+    selectors:
+      - namespace: dev
+        labels:
+          env: dev
